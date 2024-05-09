@@ -1,0 +1,170 @@
+@media only screen and (max-width: 500px) {
+
+  #overlay .img-n {
+    height: auto;
+    width: 90%;
+  }
+  #overlay span {
+    font-size: 1.35rem;
+  } 
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px)   {
+  #overlay img {
+    height: auto;
+    width: 90%;
+  }
+  #overlay span {
+    font-size: 1.2rem;
+  } 
+}
+
+body {
+  border: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+   background-image: linear-gradient(to top, #9db1c5 0%, #d3d9df 14%, white 100%);
+  box-sizing: border-box;
+}
+
+#app {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.gallery {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content:center;
+  gap: 1rem;
+ 
+}
+.red-heart {
+  position: relative;
+  color:red; 
+  font-size: 1.15rem;
+  top: -0.4rem;
+  margin-right: 0.36rem;
+  margin-left: 0.12rem
+}
+
+.views{
+  position: relative;
+  top:-0.65rem;
+  font-size: 1.4rem;
+  margin-right: 0.2rem;
+}
+.card{
+  background-color: rgb(255, 255, 255);
+  padding: 15px 15px 20px 15px;
+  margin:1px;  
+}
+
+.card-info{
+  position: relative;
+  top:0.2rem;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: -0.7rem;
+  font-size: 0.75rem;
+}
+
+ .img-n {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  overflow:hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+} 
+
+ #overlay {
+  position: fixed;
+  width: 110%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:nowrap;
+  top: 0;
+  left: 0;
+} 
+
+#overlay img{
+  height: auto;
+  width: auto;
+  max-width: 90%;
+  max-height:80%;
+  border: 0;
+  object-fit:scale-down;
+}
+.img-info{
+  font-size: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#overlay span {
+  color: white;
+  /* margin-top: 1rem; */
+  margin-left: 1rem;
+  margin-right: 1rem;
+  white-space: nowrap;
+}
+
+#overlay #vw2{
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-size: 2.3rem;
+  top: 0.18rem;
+  margin-right: 0.1rem;
+  margin-left: 0rem;
+}
+#overlay #rh2{
+  position: relative;
+  color: red;
+  font-size: 2rem;
+  top: 0.15rem;
+  margin-right: 0.36rem;
+  margin-left: 0.12rem;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .8s, scale .8s;
+  
+}
+.fade-enter, .fade-leave-to {
+  scale:0.8;
+  opacity: 0;
+} 
+
+.spinner {
+  position: absolute;
+  transform: translate(-50%, -50%); 
+  width: 150px;
+  height: 150px;
+  border: 3px dotted rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border-left-color: #f3f3f3;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
