@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AK test gallery with lightbox</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div id="app">
+  
+   
+      <div class="gallery">
+        <div v-for="pic in images" :key="pic.id">
+          
+          <div class="card"> 
+            <div :class="{ 'img-n': true }" :style="{ backgroundImage: `url(${pic.previewURL})` }" alt="Image by {{ pic.user }}" @click="openBox(pic)" @mouseover="preloadImage(pic.largeImageURL)">
+            </div>
+            <div class="card-info-wrap">
+              <span id="views-count" 
+                class ='card-info'><span class="views">&#128065</span>{{ pic.views }}</span>
+              <span id="likes-count" 
+                class ='card-info'><span class='red-heart'>&#10084</span>{{ pic.likes }}</span>
+          </div>
+        </div>
+        </div>
+ 
+    </div>
+    <transition name="fade">
+      <app-lightbox :close="closeBox" :loading="isLoading" :imgsource="currentPic" v-if="lightBoxToggle"></app-lightbox>
+    </transition>
+  </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+<!-- style="background: url('pic.previewURL')  -->
